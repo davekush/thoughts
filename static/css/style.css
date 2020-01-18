@@ -1,0 +1,115 @@
+/* * {
+    outline: red dotted 1px;
+} */
+
+label, input {
+    display: block;
+}
+
+.lefthead {
+    width: 89%;
+    display: inline-block;
+}
+
+.righthead {
+    width: 10%;
+    display: inline-block;
+}
+
+.feed {
+    margin: 10px;
+    padding: 10px;
+
+}
+
+.post{
+    margin: 5px;
+    padding: 2px;
+    border-bottom: solid black 1px;
+}
+
+.reg {
+    width: 45%;
+    display: inline-block;
+    border: solid black 1px;
+    margin: 10px;
+    padding:10px;
+}
+
+.login {
+    width: 45%;
+    display: inline-block;
+    border: solid black 1px;
+    margin: 10px;
+    padding:10px;
+
+}
+
+.button {
+    margin: 10px;
+    display: inline-block;
+}
+
+.msg {
+    display: block;
+}
+
+textarea {
+    display: inline-block;
+}
+
+.addtht {
+    background-color: #2b78e4;
+    color: white;
+}
+
+
+.flash {
+    color: green;
+}
+
+.thtleft {
+    width: 150px;
+    display: inline-block;
+}
+.thtmain {
+    display: inline-block;
+    width: 600px;
+}
+
+.thoughtcnt {
+    border: 1px solid black;
+}
+
+.timesliked {
+    font-size: smaller;
+    font-style: italic;
+    display: inline-block;
+}
+a .det {
+    display: inline-block;
+}
+
+.delbut {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+}
+
+#delbut {
+    color: white;
+    text-decoration: none;
+}
+
+.thought {
+    margin: 10px;
+    padding: 5px;
+}
+
+.unlike {
+    background-color: orange;
+}
+
+.like {
+    background-color: green;
+}

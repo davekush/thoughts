@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+        <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+        <title>Thoughts</title>
+    </head>
+    <body>
+        <header>
+            <div class="lefthead">
+            </div>
+            <div class="righthead">
+                <a href="/logout">Logout</a>
+                <a href="/thoughts">Dashboard</a>
+            </div>
+        </header>
+        
+        <!-- FLASH MESSAGES -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %} 
+                {% for message in messages %}  
+                    <p class="flash">{{message}}</p> 
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        
+        <div class="detail">
+
+            <h5>{{thought['firstname']}} says  </h5>
+            <p class="thoughtcnt">{{thought['content']}}</p>
+            
+            {% if thought['already_liked']==True %}
+            <a href="/thought/{{ thought['id'] }}/unlike"><button class="unlike">Unlike</button></a>
+            {% else %}
+            <a href="/thought/{{ thought['id'] }}/add_like"><button class="like">Like</button></a>
+            {% endif %}
+
+ 
+            {% if session['userid'] == thought['userid'] %}
+            <a href="/thought/{{thought['id']}}/delete"><button class="delbut">Delete Thought</button></a>
+            {% endif %}
+<br><br><br>
+            <h5>People who liked this thought:</h5>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for like in likes %}
+                        <tr><td>{{like['firstname']}}</td><td> {{like['lastname']}}</td></tr>
+                    {% endfor %}                    
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
