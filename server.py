@@ -240,7 +240,7 @@ def detail(thought_id):
     return render_template ('/detail.html', thought=thought, likes=likes)
 
 
-@app.route('/thought/<thought_id>/delete', methods=['POST'])
+@app.route('/thought/<thought_id>/delete', methods=['GET'])
 def thoughtdelete(thought_id):
     if 'userid' not in session:
         return redirect('/')

@@ -47,7 +47,7 @@
                         <p class="timesliked">{{thought['times_liked']}} people like this</p>    
                     </div>
                     {% if session['userid'] == thought['userid'] %}
-                    <a href="/thought/{{thought['id']}}/delete" id="delbut" ><button class="delbut">Delete Thought</button></a>
+                    <a href="/thought/{{thought['thought_id']}}/delete" id="delbut" ><button class="delbut">Delete Thought</button></a>
                     {% endif %}
         
  
